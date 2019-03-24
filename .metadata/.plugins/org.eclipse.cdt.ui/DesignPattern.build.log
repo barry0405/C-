@@ -1,0 +1,5 @@
+23:15:55 **** Clean-only build of configuration Debug for project DesignPattern ****
+rm -rf FacadePattern/main.o DesignPattern.exe FacadePattern/main.d 
+
+23:15:55 Build Finished. 0 errors, 0 warnings. (took 345ms)
+

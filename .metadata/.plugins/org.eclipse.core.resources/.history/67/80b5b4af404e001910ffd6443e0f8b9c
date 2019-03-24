@@ -1,0 +1,41 @@
+#ifdef SUB_SYSTEM_H
+#define SUB_SYSTEM_H
+
+
+
+#include <iostream>
+#include <windows.h>
+#include <string>
+
+const std::string c_stateToStrCourier[] = {"收到", "验证可达性", "分配人员", "派送包裹", "获取交货确认", "完成"};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#endif

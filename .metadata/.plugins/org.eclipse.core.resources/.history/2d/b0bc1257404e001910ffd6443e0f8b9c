@@ -1,0 +1,39 @@
+#ifdef SUB_SYSTEM_H
+#define SUB_SYSTEM_H
+
+
+
+#include <iostream>
+#include <windows.h>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#endif

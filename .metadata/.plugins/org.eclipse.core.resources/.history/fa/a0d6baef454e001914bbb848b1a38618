@@ -1,0 +1,23 @@
+#include "facade.h"
+
+int main()
+{
+    OnlineShoppingFacade facade;
+
+    // 提交订单
+    facade.submitRequest();
+
+    // 跟踪订单，直到订单完成
+    while (!facade.checkStatus());
+
+    std::cout << "********** 订单完成，跟踪次数：" << facade.followupNum() << " **********" << std::endl;
+
+    getchar();
+
+    return 0;
+}
+---------------------
+作者：一去丶二三里
+来源：CSDN
+原文：https://blog.csdn.net/liang19890820/article/details/70850367
+版权声明：本文为博主原创文章，转载请附上博文链接！
