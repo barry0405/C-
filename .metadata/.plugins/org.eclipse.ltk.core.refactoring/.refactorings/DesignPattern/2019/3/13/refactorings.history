@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;DesignPattern/Facade Pattern&apos; to &apos;FacadePattern&apos;" description="Rename resource &apos;Facade Pattern&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Facade Pattern" name="FacadePattern" stamp="1553438117436" updateReferences="true"/>
-</session>
