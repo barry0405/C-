@@ -20,6 +20,7 @@ int main()
 }
 */
 
+/*
 #include <iostream>
 #include <string>
 
@@ -40,5 +41,68 @@ int main(int argc, char **argv)
 
 	cout << "Making coffee..." << endl;
 	ccoffeeHook.prepareRecipe();
+}
+*/
+
+#include <iostream>
+#include "CommandPattern/RemoteControl.h"
+#include "CommandPattern/light.h"
+#include "CommandPattern/GarageDoor.h"
+#include "CommandPattern/Stereo.h"
+
+
+int main(int argc, char **argv)
+{
+	light clight;
+	lightOnCommand clighton(clight);
+	GarageDoor cgarageDoor;
+	GarageDoorOpenCommand cGarageDoorOpen(cgarageDoor);
+
+	SimpleRemoteControl remote(&clighton);
+
+	remote.setCommand(&clighton);
+	remote.buttonWasPressed();
+	remote.setCommand(&cGarageDoorOpen);
+	remote.buttonWasPressed();
+
+	cout << "Remote Control test" << endl;
+
+	RemoteControl cRemoteControl;
+	light clivingRoomLight("Living Room");
+	light ckitChenLight("kitchen");
+	CStereo CStereo;
+
+	lightOnCommand livingRoomLightOn(clivingRoomLight);
+	lightOffCommand livingRoomLightOff(clivingRoomLight);
+
+	lightOnCommand kitchenLightOn(ckitChenLight);
+	lightOffCommand kitchenLightOff(ckitChenLight);
+
+	GarageDoorCloseCommand cGarageDoorClose(cgarageDoor);
+
+	CStereoOnWithCDCommand cstereoOnWithCD(CStereo);
+	CStereoOffCommand cstereooff(CStereo);
+
+	cRemoteControl.setCommand(0, &livingRoomLightOn, &livingRoomLightOff);
+	cRemoteControl.setCommand(1, &kitchenLightOn, &kitchenLightOff);
+	cRemoteControl.setCommand(2, &cGarageDoorOpen, &cGarageDoorClose);
+	cRemoteControl.setCommand(3, &cstereoOnWithCD, &cstereooff);
+
+	cRemoteControl.onButtonWasPushed(0);
+	cRemoteControl.offButtonWasPushed(0);
+	cRemoteControl.undoButtonWasPushed();
+	cout << endl;
+	cRemoteControl.onButtonWasPushed(1);
+	cRemoteControl.offButtonWasPushed(1);
+	cRemoteControl.undoButtonWasPushed();
+	cout << endl;
+	cRemoteControl.onButtonWasPushed(2);
+	cRemoteControl.offButtonWasPushed(2);
+	cRemoteControl.undoButtonWasPushed();
+	cout << endl;
+	cRemoteControl.onButtonWasPushed(3);
+	cRemoteControl.offButtonWasPushed(3);
+	cRemoteControl.undoButtonWasPushed();
+	cout << endl;
 }
 
